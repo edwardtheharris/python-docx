@@ -10,6 +10,7 @@ from __future__ import absolute_import
 from lxml import etree
 
 from .ns import NamespacePrefixedTag, nsmap
+import lxml.etree
 
 
 # configure XML parser
@@ -25,7 +26,7 @@ def parse_xml(xml):
     parser is used, so custom element classes are produced for elements in
     *xml* that have them.
     """
-    root_element = etree.fromstring(xml, oxml_parser)
+    root_element = etree.fromstring(xml, oxml_parser, parser=lxml.etree.XMLParser(resolve_entities=False))
     return root_element
 
 

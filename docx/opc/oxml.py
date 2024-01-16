@@ -12,6 +12,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 from lxml import etree
 
 from .constants import NAMESPACE as NS, RELATIONSHIP_TARGET_MODE as RTM
+import lxml.etree
 
 
 # configure XML parser
@@ -34,7 +35,7 @@ def parse_xml(text):
     """
     ``etree.fromstring()`` replacement that uses oxml parser
     """
-    return etree.fromstring(text, oxml_parser)
+    return etree.fromstring(text, oxml_parser, parser=lxml.etree.XMLParser(resolve_entities=False))
 
 
 def qn(tag):
