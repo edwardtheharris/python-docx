@@ -40,13 +40,13 @@ class StreamReader:
         endian setting of this instance is used to interpret the byte layout of the
         long.
         """
-        fmt = "<L" if self._byte_order is LITTLE_ENDIAN else ">L"
+        fmt = "<L" if self._byte_order == LITTLE_ENDIAN else ">L"
         return self._read_int(fmt, base, offset)
 
     def read_short(self, base, offset=0):
         """Return the int value of the two bytes at the file position determined by
         `base` and `offset`, similarly to ``read_long()`` above."""
-        fmt = b"<H" if self._byte_order is LITTLE_ENDIAN else b">H"
+        fmt = b"<H" if self._byte_order == LITTLE_ENDIAN else b">H"
         return self._read_int(fmt, base, offset)
 
     def read_str(self, char_count, base, offset=0):
