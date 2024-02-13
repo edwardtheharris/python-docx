@@ -60,7 +60,8 @@ class OpcPackage:
         """Generate exactly one reference to each of the parts in the package by
         performing a depth-first traversal of the rels graph."""
 
-        def walk_parts(source, visited=[]):
+        def walk_parts(source, visited=None):
+            visited = [] if visited is None else visited
             for rel in source.rels.values():
                 if rel.is_external:
                     continue
