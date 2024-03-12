@@ -112,8 +112,7 @@ class CT_Settings(BaseOxmlElement):
     @property
     def evenAndOddHeaders_val(self):
         """Value of `w:evenAndOddHeaders/@w:val` or |None| if not present."""
-        evenAndOddHeaders = self.evenAndOddHeaders
-        if evenAndOddHeaders is None:
+        if (evenAndOddHeaders := self.evenAndOddHeaders) is None:
             return False
         return evenAndOddHeaders.val
 
