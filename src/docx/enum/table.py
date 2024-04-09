@@ -32,9 +32,9 @@ class WD_CELL_VERTICAL_ALIGNMENT(BaseXmlEnum):
     BOTH = (
         101,
         "both",
-        "This is an option in the OpenXml spec, but not in Word itself. It's not"
-        " clear what Word behavior this setting produces. If you find out please"
-        " let us know and we'll update this documentation. Otherwise, probably best"
+        "This is an option in the OpenXml spec, but not in Word itself. It's not",
+        " clear what Word behavior this setting produces. If you find out please",
+        " let us know and we'll update this documentation. Otherwise, probably best",
         " to avoid this option.",
     )
     """This is an option in the OpenXml spec, but not in Word itself.

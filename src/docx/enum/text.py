@@ -198,7 +198,7 @@ class WD_LINE_SPACING(BaseXmlEnum):
     MULTIPLE = (
         5,
         "auto",
-        "Line spacing is specified as multiple of line heights. Changing font size"
+        "Line spacing is specified as multiple of line heights. Changing font size",
         " will change line spacing proportionately.",
     )
     """Line spacing is specified as multiple of line heights. Changing font size will
@@ -285,11 +285,11 @@ class WD_UNDERLINE(BaseXmlEnum):
     NONE = (
         0,
         "none",
-        "No underline.\n\nThis setting overrides any inherited underline value, so can"
-        " be used to remove underline from a run that inherits underlining from its"
-        " containing paragraph. Note this is not the same as assigning |None| to"
-        " Run.underline. |None| is a valid assignment value, but causes the run to"
-        " inherit its underline value. Assigning `WD_UNDERLINE.NONE` causes"
+        "No underline.\n\nThis setting overrides any inherited underline value, so can",
+        " be used to remove underline from a run that inherits underlining from its",
+        " containing paragraph. Note this is not the same as assigning |None| to",
+        " Run.underline. |None| is a valid assignment value, but causes the run to",
+        " inherit its underline value. Assigning `WD_UNDERLINE.NONE` causes",
         " underlining to be unconditionally turned off.",
     )
     """No underline.
@@ -304,8 +304,8 @@ class WD_UNDERLINE(BaseXmlEnum):
     SINGLE = (
         1,
         "single",
-        "A single line.\n\nNote that this setting is write-only in the sense that"
-        " |True| (rather than `WD_UNDERLINE.SINGLE`) is returned for a run having"
+        "A single line.\n\nNote that this setting is write-only in the sense that",
+        " |True| (rather than `WD_UNDERLINE.SINGLE`) is returned for a run having",
         " this setting.",
     )
     """A single line.
