@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Dict, Type, cast
 from lxml import etree
 
 from docx.oxml.ns import NamespacePrefixedTag, nsmap
+import lxml.etree
 
 if TYPE_CHECKING:
     from docx.oxml.xmlchemy import BaseOxmlElement
@@ -24,7 +25,7 @@ def parse_xml(xml: str) -> "BaseOxmlElement":
     The custom parser is used, so custom element classes are produced for elements in
     `xml` that have them.
     """
-    return cast("BaseOxmlElement", etree.fromstring(xml, oxml_parser))
+    return cast("BaseOxmlElement", etree.fromstring(xml, oxml_parser, parser=lxml.etree.XMLParser(resolve_entities=False)))
 
 
 def register_element_cls(tag: str, cls: Type["BaseOxmlElement"]):

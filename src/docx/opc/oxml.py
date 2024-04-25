@@ -9,6 +9,7 @@ from lxml import etree
 
 from docx.opc.constants import NAMESPACE as NS
 from docx.opc.constants import RELATIONSHIP_TARGET_MODE as RTM
+import lxml.etree
 
 # configure XML parser
 element_class_lookup = etree.ElementNamespaceClassLookup()
@@ -29,7 +30,7 @@ nsmap = {
 
 def parse_xml(text: str) -> etree._Element:  # pyright: ignore[reportPrivateUsage]
     """`etree.fromstring()` replacement that uses oxml parser."""
-    return etree.fromstring(text, oxml_parser)
+    return etree.fromstring(text, oxml_parser, parser=lxml.etree.XMLParser(resolve_entities=False))
 
 
 def qn(tag):
